@@ -1,95 +1,76 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import about from '../public/about.jpg'
+import info from '../public/info.jpg'
+import resources from '../public/resources.jpg'
+import contact from '../public/contact.jpg'
+import Link from 'next/link';
+
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div
+      style={{
+        display: 'grid',
+        gridGap: '8px',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(600px, auto))'
+      }}>
+      <div 
+        style={{
+          position: 'relative', height: '500px'
+        }}>
+        <Link href="/about">
+        <Image src={about}
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover'
+        }}
+        className={styles.gridImage}/>
+        </Link>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div 
+        style={{
+          position: 'relative', height: '500px'
+        }}>
+        <Link href="/info">
+        <Image src={info}
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover'
+        }}
+        className={styles.gridImage}/>
+        </Link>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div 
+        style={{
+          position: 'relative', height: '500px'
+        }}>
+        <Link href="/contact">
+        <Image src={contact}
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover'
+        }}
+        className={styles.gridImage}/>
+        </Link>
       </div>
-    </main>
+      <div 
+        style={{
+          position: 'relative', height: '500px'
+        }}
+        className={styles.gridImage}>
+        <Link href="https://zencare.co/provider/therapist/valerie-goss">
+        <Image src={resources}
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover'
+        }}/>
+        </Link>
+      </div>
+    </div>
   )
 }
